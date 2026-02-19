@@ -9,9 +9,23 @@ title: Home
 
 <section class="main-article">
     <h2>Featured Article</h2>
-    {% assign featured = site.posts.first %}
-    <h3><a href="{{ featured.url }}" style="color: var(--navy);">{{ featured.title }}</a></h3>
-    <p>{{ featured.excerpt | truncatewords: 25 }}</p>
+    <h3>
+  <a href="{{ featured.url | relative_url }}" style="color: var(--navy);">
+    {{ featured.title }}
+  </a>
+</h3>
+
+{% for post in site.posts offset:1 limit:2 %}
+<div class="sub-article">
+    <h4>
+      <a href="{{ post.url | relative_url }}" style="color: var(--black); text-decoration: none;">
+        {{ post.title }}
+      </a>
+    </h4>
+    <small>{{ post.date | date: "%b %d, %Y" }}</small>
+</div>
+{% endfor %}
+    
 </section>
 
 <section>
