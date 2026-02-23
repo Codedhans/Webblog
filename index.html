@@ -3,31 +3,36 @@ layout: default
 title: Home
 ---
 
+{% assign featured = site.posts.first %}
+
 <section>
-    <a href="/tutorials" class="btn-tutorial">🚀 View All Programming Tutorials</a>
+    <a href="{{ '/tutorials' | relative_url }}" class="btn-tutorial">🚀 View All Programming Tutorials</a>
 </section>
 
 <section class="main-article">
     <h2>Featured Article</h2>
+    {% if featured %}
     <h3>
-  <a href="{{ featured.url | relative_url }}" style="color: var(--navy);">
-    {{ featured.title }}
-  </a>
-</h3>
-    
-{% endfor %}
+        <a href="{{ featured.url | relative_url }}" style="color: var(--navy);">
+            {{ featured.title }}
+        </a>
+    </h3>
+    <p>{{ featured.excerpt | strip_html | truncatewords: 25 }}</p>
+    {% else %}
+    <p>No posts found yet. Start writing in your _posts folder!</p>
+    {% endif %}
 </section>
 
 <section>
     <h3>Recent Bytes</h3>
     {% for post in site.posts offset:1 limit:2 %}
     <div class="sub-article">
-      <h4>
-      <a href="{{ post.url | relative_url }}" style="color: var(--black); text-decoration: none;">
-        {{ post.title }}
-      </a>
-    </h4>
-    <small>{{ post.date | date: "%b %d, %Y" }}</small>  
+        <h4>
+            <a href="{{ post.url | relative_url }}" style="color: var(--black); text-decoration: none;">
+                {{ post.title }}
+            </a>
+        </h4>
+        <small>{{ post.date | date: "%b %d, %Y" }}</small>  
     </div>
     {% endfor %}
 </section>
