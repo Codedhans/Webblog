@@ -7,7 +7,7 @@ title: Contact The Codedhans
 Have a question about a tutorial or a project proposal? Drop a message below.
 
 <div class="contact-form-container">
-  <form action="https://formspree.io/f/codedspace1@gmail.com" method="POST">
+  <form action="https://formspree.io/f/xgoldvlk" method="POST">
     
     <label>Your Name:</label>
     <input type="text" name="name" required placeholder="John Doe">
