@@ -1,7 +1,15 @@
-baseurl: ""
+title: The Codedhans
+email: codedspace1@gmail.com
+description: Art of Software.
+baseurl: "" 
 url: "https://codedhans.github.io"
-title: My Mobile Blog
-description: Built entirely on my phone!
-theme: jekyll-theme-minimal
-permalink: /:title/
+
+# Build settings
+remote_theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# This is the most important part to prevent the "Build with Jekyll" crash
 future: true
+incremental: false
