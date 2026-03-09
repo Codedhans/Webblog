@@ -105,7 +105,27 @@ main { padding: 20px; max-width: 600px; margin: auto; }
     font-weight: bold;
     margin: 20px 0;
 }
+.social-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
+.social-links a {
+    color: var(--white);
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--peru);
+    transform: translateY(-3px);
+}
+
+.social-links i {
+    width: 24px;
+    height: 24px;
+    }
 /* Footer */
 footer {
     background: var(--black);
